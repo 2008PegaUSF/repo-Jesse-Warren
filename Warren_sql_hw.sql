@@ -146,17 +146,23 @@ from "Track";
 
 /*Question 17*/
 
-create or replace function invLAverage()
-returns numeric(10,2)
-language sql
-	as 	$$
-	select avg("UnitPrice") from "InvoiceLine";
-	
+create or replace function avgInvoice()
+returns numeric 
+language plpgsql
+as 
+$$
+declare theCount int;
+declare theTotal numeric;
+begin 
+	select count("UnitPrice") into theCount from "InvoiceLine";
+	select sum("UnitPrice") into theTotal from "InvoiceLine";
+return theTotal/theCount;
+end
 $$
 
 /*Creating a function to return the average of the unitprice from invoiceline*/
 
-select invLAverage();
+select avgInvoice();
 
 /*Question 18*/
 
@@ -175,12 +181,25 @@ select EmployeeAge();
 
 /*Question 19*/
 
+
+create or replace function trigger_phone()
+returns trigger
+language plpgsql
+as 
+$$
+begin
+update "Employee" set "Phone" = '8675309' where "EmployeeId"=new."EmployeeId";
+return new; 
+end 
+$$
+
+/*a function to set the phone number on new entries to 8675309*/
+
 create trigger "phone_numb"
 after insert 
 on "Employee" 
-begin 
-insert into "Phone" values ('8675309');
-end;
+for each row
+execute  function trigger_phone();
 
 /*A trigger which after insert sets the inserted values phone number to 8675309*/
 
@@ -190,12 +209,27 @@ select "Phone" from "Employee" where "EmployeeId"=1739;
 
 /*Question 20*/
 
+create or replace function comp_replace()
+returns trigger 
+language plpgsql
+as 
+$$
+begin 
+	if (TG_OP='INSERT') then 
+	new."Company"='Revature';
+	end if;
+	return new;
+end
+$$
+
+/* the function to insert revature as the company on new entries*/
+
 create trigger "comp_name"
 before insert 
 on "Customer"
-begin
-insert into "Customer"("Company")  values ('Revature');
-end;
+for each row 
+execute function comp_replace();
+
 
 /*Creating a trigger before insertion on the customer table which changes the company to Revature*/
 
