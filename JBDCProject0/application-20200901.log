@@ -1,0 +1,10 @@
+2020-09-01 15:53:36.414 [main] INFO  BankingFunction.BankApp - The user: [] withdrew 50.0from account: 3
+2020-09-01 16:22:24.592 [main] INFO  BankingFunction.BankApp - The user: theboss logged in
+2020-09-01 16:22:39.590 [main] INFO  BankingFunction.BankApp - The user: theboss logged out
+2020-09-01 16:23:35.068 [main] INFO  BankingFunction.BankApp - A user was created
+2020-09-01 16:23:45.268 [main] INFO  BankingFunction.BankApp - The user: jtwarrenz logged in
+2020-09-01 16:24:42.148 [main] INFO  BankingFunction.BankApp - The user: jtwarrenz created an account
+2020-09-01 16:25:02.082 [main] INFO  BankingFunction.BankApp - The user: jtwarrenz deposited 50.0to account: 4
+2020-09-01 16:26:27.678 [main] INFO  BankingFunction.BankApp - The user: jtwarrenz withdrew 50.0from account: 4
+2020-09-01 16:26:40.710 [main] INFO  BankingFunction.BankApp - The user: jtwarrenz deleted an account
+2020-09-01 16:26:44.214 [main] INFO  BankingFunction.BankApp - The user: jtwarrenz logged out

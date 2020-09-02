@@ -1,0 +1,4 @@
+2020-09-02 01:16:01.268 [main] INFO  BankingFunction.BankApp - The user: theboss logged in
+2020-09-02 01:16:12.484 [main] INFO  BankingFunction.BankApp - The user: theboss logged out
+2020-09-02 01:16:39.680 [main] INFO  BankingFunction.BankApp - The user: jtwarrenz logged in
+2020-09-02 01:17:42.267 [main] INFO  BankingFunction.BankApp - The user: jtwarrenz logged out
