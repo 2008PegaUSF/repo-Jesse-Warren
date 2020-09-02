@@ -1,4 +1,4 @@
-# Faber and Warren Bank App
+# Warren Golden Bank App
 # New Features!
 # Base User
 | Username | Password |
